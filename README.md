@@ -9,7 +9,7 @@ Repositório contendo os scripts, bases de dados tratadas e o relatório técnic
 ## Objetivos Alcançados:
 * **Limpeza e Estruturação:** Conversão de um multigrafo temporal bruto em um grafo simples estático (isolamento da maior componente conexa e remoção de self-loops).
 * **Extração de Métricas:** Cálculo de dimensão, densidade, distribuição de graus, diâmetro, raio e clusterização.
-* **Análise de Desempenho:** Testes empíricos ($N=30$) comparando o tempo de execução local de algoritmos como **BFS, DFS, Dijkstra, Tarjan e Kruskal** com seus limites teóricos (Big-O).
+* **Análise de Desempenho:** Testes comparando o tempo de execução local de algoritmos como **BFS, DFS, Dijkstra, Tarjan e Kruskal** com seus limites teóricos (Big-O).
 * **Teste de Robustez:** Simulação de resiliência da rede contra remoção aleatória de nós (5%) versus ataques direcionados aos maiores *hubs* (5%).
 
 ## Tecnologias Utilizadas
@@ -40,18 +40,17 @@ Repositório contendo os scripts, bases de dados tratadas e o relatório técnic
 2. Configurar o ambiente e dependências
 
 Crie e ative um ambiente virtual (opcional, mas recomendado):
-Bash
 
-# No Windows:
+**No Windows:**
+```bash
 python -m venv venv
 venv\Scripts\activate
 
-# No Linux/Mac:
+**No Linux/Mac:**
 python3 -m venv venv
 source venv/bin/activate
 
 Instale as bibliotecas necessárias para rodar o script:
-Bash
 
 pip install networkx matplotlib pandas jupyter scipy
 
@@ -68,7 +67,4 @@ jupyter notebook
 
     Vá no menu superior, clique em Cell (ou Run) e selecione Run All para executar todo o pipeline, desde a limpeza dos dados até a geração dos gráficos de resultados.
 
-Autora
-
-Stephanie Sacramento - Universidade Federal da Bahia (UFBA)
-Contato: stephaniesacramento@ufba.br
+Autora: Stephanie Sacramento - Universidade Federal da Bahia (UFBA)
