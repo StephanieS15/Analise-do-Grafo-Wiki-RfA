@@ -5,66 +5,130 @@
 
 Repositório contendo os scripts, bases de dados tratadas e o relatório técnico do projeto de análise de redes complexas, focado na base de dados **Wiki-RfA** (Wikipedia Requests for Adminship), extraída do repositório SNAP de Stanford.
 
+---
 
-## Objetivos Alcançados:
-* **Limpeza e Estruturação:** Conversão de um multigrafo temporal bruto em um grafo simples estático (isolamento da maior componente conexa e remoção de self-loops).
-* **Extração de Métricas:** Cálculo de dimensão, densidade, distribuição de graus, diâmetro, raio e clusterização.
-* **Análise de Desempenho:** Testes comparando o tempo de execução local de algoritmos como **BFS, DFS, Dijkstra, Tarjan e Kruskal** com seus limites teóricos (Big-O).
-* **Teste de Robustez:** Simulação de resiliência da rede contra remoção aleatória de nós (5%) versus ataques direcionados aos maiores *hubs* (5%).
+## Objetivos do Projeto
 
-## Tecnologias Utilizadas
+- Realizar o tratamento e a modelagem da base de dados Wiki-RfA;
+- Extrair métricas estruturais da rede;
+- Avaliar o desempenho de algoritmos clássicos em grafos;
+- Investigar a robustez da rede sob diferentes estratégias de remoção de vértices.
 
-* **Python 3**
-* **NetworkX:** Para modelagem e cálculo de métricas estruturais.
-* **Matplotlib / Seaborn:** Para a geração e visualização gráfica dos dados.
-* **Pandas:** Para manipulação da base de dados bruta.
-* **Jupyter Notebook:** Para estruturação do pipeline de forma interativa.
+---
 
-## Estrutura do Repositório
+# Tecnologias Utilizadas
 
-* `analise_wiki_rfa.ipynb`: Script principal em Jupyter Notebook com todo o pipeline (tratamento de dados, métricas, algoritmos e gráficos).
-* `wiki-RfA.txt`: Base de dados original bruta contendo o histórico de votações.
-* `wiki-RfA_edges_clean.csv`: Base de dados tratada em formato tabular, contendo as arestas limpas após a remoção de loops e redundâncias.
-* `wiki-RfA_lista_adjacencia.adjlist`: Arquivo com a estrutura topológica do grafo exportada em formato de lista de adjacência.
-* `imagens geradas/`: Pasta com os gráficos exportados durante as análises.
-  * `dsitribuicao_graus.png`: Gráfico da distribuição de graus em escala log-log.
-  * `representacao_grafo.png`: Visualização estrutural da rede.
-* `README.md`: Documentação principal do projeto.
+- Python 3
+- NetworkX
+- Pandas
+- Matplotlib
+- Seaborn
+- Jupyter Notebook
 
-## Como Executar
+---
 
-1. Clone este repositório para sua máquina local:
-   ```bash
-   git clone [https://github.com/stephaniesacramento/wiki-rfa-graphs.git](https://github.com/stephaniesacramento/wiki-rfa-graphs.git)
+# Descrição dos Arquivos
 
-2. Configurar o ambiente e dependências
+| Arquivo | Descrição |
+|----------|-----------|
+| `analise_wiki_rfa.ipynb` | Notebook contendo todo o pipeline de análise. |
+| `wiki-RfA.txt` | Base de dados original disponibilizada pelo SNAP. |
+| `wiki-RfA_edges_clean.csv` | Base tratada após remoção de *self-loops* e arestas duplicadas. |
+| `wiki-RfA_lista_adjacencia.adjlist` | Grafo exportado em formato de lista de adjacência. |
+| `imagens_geradas/` | Gráficos produzidos durante a análise. |
+| `README.md` | Documentação do projeto. |
 
-Crie e ative um ambiente virtual (opcional, mas recomendado):
+---
 
-**No Windows:**
+# Como Executar
+
+## 1. Clonar o repositório
+
+```bash
+git clone https://github.com/StephanieS15/Analise-do-Grafo-Wiki-RfA.git
+
+```
+
+---
+
+## 2. Criar um ambiente virtual (Opcional)
+
+### Windows
+
 ```bash
 python -m venv venv
+
 venv\Scripts\activate
+```
 
-**No Linux/Mac:**
+### Linux / macOS
+
+```bash
 python3 -m venv venv
+
 source venv/bin/activate
+```
 
-Instale as bibliotecas necessárias para rodar o script:
+---
 
-pip install networkx matplotlib pandas jupyter scipy
+## 3. Instalar as dependências
 
-4. Rodar a análise
+```bash
+pip install networkx pandas matplotlib seaborn scipy jupyter
+```
 
-Com tudo instalado, inicie o servidor do Jupyter Notebook:
-Bash
+---
 
+## 4. Executar o Notebook
+
+Inicie o servidor do Jupyter:
+
+```bash
 jupyter notebook
+```
 
-    O seu navegador abrirá automaticamente.
+Em seguida:
 
-    Clique no arquivo analise_wiki_rfa.ipynb.
+1. Abra o arquivo `analise_wiki_rfa.ipynb`;
+2. Selecione **Run → Run All Cells**;
+3. Aguarde a execução completa do pipeline.
 
-    Vá no menu superior, clique em Cell (ou Run) e selecione Run All para executar todo o pipeline, desde a limpeza dos dados até a geração dos gráficos de resultados.
+Ao final serão gerados:
 
-Autora: Stephanie Sacramento - Universidade Federal da Bahia (UFBA)
+- métricas da rede;
+- tabelas;
+- gráficos;
+- resultados dos algoritmos;
+- análise de robustez.
+
+---
+
+# Base de Dados
+
+A base utilizada é a **Wiki-RfA (Wikipedia Requests for Adminship)**, disponibilizada pelo em:  https://snap.stanford.edu/data/wiki-RfA.html
+
+Ela representa a rede de votações entre usuários da Wikipédia durante os processos de promoção para administradores.
+
+---
+
+# Resultados Obtidos
+
+O projeto contempla:
+
+- tratamento da base de dados;
+- construção do grafo;
+- caracterização estrutural da rede;
+- distribuição de graus;
+- análise da propriedade *Small-World*;
+- avaliação da robustez da rede;
+- comparação experimental de algoritmos clássicos em grafos.
+
+---
+
+# Autora
+
+**Stephanie Sacramento**
+
+Universidade Federal da Bahia (UFBA)
+
+Disciplina de Teoria dos Grafos
